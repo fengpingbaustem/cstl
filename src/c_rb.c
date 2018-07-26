@@ -86,7 +86,7 @@ new_c_rb(clib_compare fn_c,clib_destroy fn_ed, clib_destroy fn_vd ){
     struct clib_rb* pTree = (struct clib_rb*)malloc(sizeof(struct clib_rb));
     if ( pTree == (struct clib_rb*)0 )
         return (struct clib_rb*)0;
-
+    memset(pTree, 0, sizeof(struct clib_rb));
     pTree->compare_fn           = fn_c;
     pTree->destruct_k_fn        = fn_ed;
     pTree->destruct_v_fn        = fn_vd;
